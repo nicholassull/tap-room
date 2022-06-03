@@ -1,9 +1,17 @@
 import React from "react";
 
 function Header() {
+  const headerStyling = {
+      padding: '20px',
+      textAlign: 'center',
+      maxWidth: '600px',
+      margin: '0px auto',
+    }
   return ( 
     <React.Fragment>
-      <h1>Tap Room</h1>
+      <div style={headerStyling} className="header">
+        <h1>The Tap Room</h1>
+      </div>
     </React.Fragment>
   );
 }
