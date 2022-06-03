@@ -1,12 +1,14 @@
 import React from "react";
 import KegList from "./KegList";
 import KegDetails from "./KegDetails";
+import NewKegForm from "./NewKegForm";
 
 class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       selectedKeg: null,
+      formVisibleOnPage: false,
       mainKegList: [
         {
           name: "Night Sky",
@@ -28,10 +30,16 @@ class KegControl extends React.Component {
     };
   }
 
+  handleAddingNewKegToList = (newKeg) => {
+    const newMainKegList = this.state.mainKegList.concat(newKeg);
+    this.setState({mainKegList: newMainKegList,
+                  formVisibleOnPage: false});
+  }
+
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
-        // formVisibleOnPage: false,
+        formVisibleOnPage: false,
         selectedKeg: null,
         // editing: false
       });
@@ -55,6 +63,9 @@ class KegControl extends React.Component {
       currentlyVisibleState = <KegDetails
       keg = {this.state.selectedKeg}
       />
+      buttonText = "Return to List";
+    } else if (this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
       buttonText = "Return to List";
     } else {
       currentlyVisibleState = <KegList kegList={this.state.mainKegList}
