@@ -2,7 +2,7 @@ import React from "react";
 
 function Header() {
   const headerStyling = {
-      padding: '20px',
+      padding: '10px',
       textAlign: 'center',
       maxWidth: '600px',
       margin: '0px auto',
