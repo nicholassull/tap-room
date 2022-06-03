@@ -15,6 +15,7 @@ class KegControl extends React.Component {
           brand: "Kile's Kombucha",
           price: 5,
           flavor: "London Fog",
+          pintsRemaining: 124,
           id: "0",
           key: "0"
         },
@@ -23,6 +24,7 @@ class KegControl extends React.Component {
           brand: "Flying High",
           price: 6,
           flavor: "Ambiguous",
+          pintsRemaining: 124,
           id: "1",
           key: "1"
         }

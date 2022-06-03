@@ -10,6 +10,7 @@ function NewKegForm(props) {
                             price: parseInt(event.target.price.value),
                             brand: event.target.brand.value,
                             flavor: event.target.flavor.value,
+                            pintsRemaining: 124,
                             id: kegKey,
                             key: kegKey})
   }
@@ -35,6 +36,10 @@ function NewKegForm(props) {
       </form>
     </React.Fragment>
   );
+}
+
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
 }
 
 export default NewKegForm;
