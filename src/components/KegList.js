@@ -1,5 +1,5 @@
 import React from "react";
-// // import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import Keg from "./Keg";
 
 function KegList(props) {
@@ -18,5 +18,9 @@ function KegList(props) {
     </React.Fragment>
   );
 }
+
+KegList.propTypes = {
+  kegList: PropTypes.array
+};
 
 export default KegList;
