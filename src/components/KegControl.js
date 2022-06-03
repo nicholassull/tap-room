@@ -1,11 +1,13 @@
 import React from "react";
 import KegList from "./KegList";
 import Test from "./Test";
+import KegDetails from "./KegDetails";
 
 class KegControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedKeg: null,
       mainKegList: [
         {
           name: "Night Sky",
@@ -26,7 +28,18 @@ class KegControl extends React.Component {
   }
 
   render() {
-    let currentlyVisibleState = <KegList kegList={this.state.mainKegList} />
+    let currentlyVisibleState = null;
+
+    if (this.state.selectedKeg != null) {
+      currentlyVisibleState = <KegDetails 
+      
+      />
+    } else {
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList} />
+    }
+
+
+
     return ( 
       <React.Fragment>
         {currentlyVisibleState}
