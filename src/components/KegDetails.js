@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function KegDetails(props) {
-  const { keg, onClickingDelete} = props;
+  const { keg } = props;
   
   return ( 
     <React.Fragment>
@@ -12,12 +12,6 @@ function KegDetails(props) {
         <p>Flavor: {keg.flavor}</p>
         <p>Brand: {keg.brand}</p>
       </div>
-      <div className="pints-display">
-        <h3>Pints</h3>
-        <p>Remaining: {keg.pintsRemaining}</p>
-        <button></button>
-      </div>
-
     </React.Fragment>
   );
 }
