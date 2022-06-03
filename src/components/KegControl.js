@@ -11,33 +11,20 @@ class KegControl extends React.Component {
           name: "Night Sky",
           brand: "Kile's Kombucha",
           price: 5,
-          flavor: "London Fog"
+          flavor: "London Fog",
+          key: "0"
         },
         {
           name: "Shepherding Goats",
           brand: "Flying High",
           price: 6,
-          flavor: "Ambiguous"
+          flavor: "Ambiguous",
+          key: "1"
         }
       ]
     };
   }
-  // state = { 
-  //   mainKegList: [
-  //     {
-  //       name: "Night Sky",
-  //       brand: "Kile's Kombucha",
-  //       price: 5,
-  //       flavor: "London Fog"
-  //     },
-  //     {
-  //       name: "Shepherding Goats",
-  //       brand: "Flying High",
-  //       price: 6,
-  //       flavor: "Ambiguous"
-  //     }
-  //   ]
-  // }
+
   render() {
     let currentlyVisibleState = <KegList kegList={this.state.mainKegList} />
     return ( 
