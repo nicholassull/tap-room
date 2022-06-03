@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 function Keg(props) {
   return ( 
     <React.Fragment>
-      <div onClick = {() => props.whenKegClicked(props.id)}>
-        <div className="keg-info">
+      <div>
+        <div onClick = {() => props.whenKegClicked(props.id)} className="keg-info">
           <h3>{props.name} - ${props.price}</h3>
           <p>Flavor: {props.flavor}</p>
           <p>{props.brand}</p>
@@ -14,6 +14,7 @@ function Keg(props) {
         <div className="keg-pints-container">
           <h4>Pints</h4>
           <p>Remaining: {props.pintsRemaining}</p>
+          <button onClick={() => props.whenSellingPint(props.id)}>Sell Pint</button>
         </div>
         <hr />
       </div>
