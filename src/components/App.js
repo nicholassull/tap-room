@@ -6,7 +6,6 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <h3>Test</h3>
       <KegControl />
     </React.Fragment>
   );

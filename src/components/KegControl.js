@@ -1,6 +1,5 @@
 import React from "react";
 import KegList from "./KegList";
-import Test from "./Test";
 import KegDetails from "./KegDetails";
 
 class KegControl extends React.Component {
@@ -14,6 +13,7 @@ class KegControl extends React.Component {
           brand: "Kile's Kombucha",
           price: 5,
           flavor: "London Fog",
+          id: "0",
           key: "0"
         },
         {
@@ -21,21 +21,31 @@ class KegControl extends React.Component {
           brand: "Flying High",
           price: 6,
           flavor: "Ambiguous",
+          id: "1",
           key: "1"
         }
       ]
     };
   }
 
+  handleChangingSelectedKeg = (id) => {
+    const selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
+    this.setState({selectedKeg: selectedKeg});
+  }
+
   render() {
     let currentlyVisibleState = null;
 
     if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetails 
+      currentlyVisibleState = <KegDetails
+      keg = {this.state.selectedKeg}
+
       
       />
     } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} />
+      currentlyVisibleState = <KegList kegList={this.state.mainKegList}
+      onKegSelection={this.handleChangingSelectedKeg}
+      />
     }
 
 
@@ -43,7 +53,6 @@ class KegControl extends React.Component {
     return ( 
       <React.Fragment>
         {currentlyVisibleState}
-        <div>Hello</div>
       </React.Fragment>
     );
   }
