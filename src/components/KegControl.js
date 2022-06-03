@@ -15,7 +15,7 @@ class KegControl extends React.Component {
           brand: "Kile's Kombucha",
           price: 5,
           flavor: "London Fog",
-          pintsRemaining: 124,
+          pintsRemaining: 2,
           id: "0",
           key: "0"
         },
@@ -60,11 +60,17 @@ class KegControl extends React.Component {
   handleSellingPint = (id) => {
     let selectedKeg = this.state.mainKegList.filter(keg => keg.id === id)[0];
     const unselectedKegs = this.state.mainKegList.filter(keg => keg.id !== id);
-    selectedKeg.pintsRemaining = selectedKeg.pintsRemaining -1;
-    const newMainKegList = unselectedKegs.concat(selectedKeg);
-    this.setState({
-      mainKegList: newMainKegList
-    })
+    if (selectedKeg.pintsRemaining > 1) {
+      selectedKeg.pintsRemaining = selectedKeg.pintsRemaining -1;
+      const newMainKegList = unselectedKegs.concat(selectedKeg);
+      this.setState({
+        mainKegList: newMainKegList
+      });
+    } else {
+      this.setState({
+        mainKegList: unselectedKegs
+      });
+    }
   }
 
   render() {
