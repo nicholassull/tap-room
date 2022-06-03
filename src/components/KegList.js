@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import KegControl from "./KegControl";
 
 function KegList(props) {
   return ( 
@@ -11,7 +12,7 @@ function KegList(props) {
         name={keg.name}
         brand={keg.brand}
         price={keg.price}
-        flavor={keg.flavor}
+        flavor={keg.flavor} />
       )}
     </React.Fragment>
   );
