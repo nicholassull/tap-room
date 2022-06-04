@@ -3,18 +3,17 @@ import PropTypes from "prop-types";
 
 
 function Keg(props) {
-  // const containerStyling = {
-  //   display: 'grid',
-  //   alignItems: 'center'
-  // }
-  // const pintsContainerStyling = {
-  //   float: 'right'
-  // }
-  
+  const kegDetailsStyling = {
+    backgroundColor: 'azure',
+    borderRadius: '8px',
+    padding: '5px auto',
+    textAlign: 'center',
+  }
+
   return ( 
     <React.Fragment>
       <div className="row">
-        <div className="keg-details col">
+        <div style={kegDetailsStyling} className="keg-details col">
           <div onClick = {() => props.whenKegClicked(props.id)} className="keg-info">
             <h3>{props.name} - ${props.price}</h3>
             <p>Flavor: {props.flavor}</p>
