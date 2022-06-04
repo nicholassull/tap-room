@@ -16,12 +16,14 @@ code {
   color: #333;
 }
 
-html {
+body {
   background-color: aliceblue;
+  /* height: 100%; */
 }
 
 .primary-container {
-  margin: 0 auto;
+  margin: 10px auto;
+  min-height: 650px;
   max-width: 900px;
   background-color: rgb(252, 233, 209);
 }

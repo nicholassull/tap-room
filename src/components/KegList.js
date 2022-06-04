@@ -9,7 +9,6 @@ function KegList(props) {
   
   return ( 
     <React.Fragment>
-      <hr />
       <div style={kegListStyling}>
         {props.kegList.map((keg) =>
           <Keg

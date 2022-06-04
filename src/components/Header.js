@@ -12,6 +12,7 @@ function Header() {
       <div style={headerStyling} className="header">
         <h1>The Tap Room</h1>
       </div>
+      <hr />
     </React.Fragment>
   );
 }
