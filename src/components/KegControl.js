@@ -92,12 +92,20 @@ class KegControl extends React.Component {
       buttonText = "Add New Keg";
     }
 
-
+    const buttonContainerStyling = {
+      display: 'grid'
+    }
+    const buttonStyling = {
+      textAlign: 'left',
+      margin: '20px auto'
+    }
 
     return ( 
       <React.Fragment>
         {currentlyVisibleState}
-        <button onClick={this.handleClick}>{buttonText}</button>
+        <div style={buttonContainerStyling}>
+          <button style={buttonStyling} onClick={this.handleClick}>{buttonText}</button>
+        </div>
       </React.Fragment>
     );
   }
