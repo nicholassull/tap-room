@@ -14,7 +14,7 @@ function Keg(props) {
         <div className="keg-pints-container">
           <h4>Pints</h4>
           <p>Remaining: {props.pintsRemaining}</p>
-          <button onClick={() => props.whenSellingPint(props.id)}>Sell Pint</button>
+          <button className="btn btn-success" onClick={() => props.whenSellingPint(props.id)}>Sell Pint</button>
         </div>
         <hr />
       </div>

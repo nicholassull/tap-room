@@ -104,7 +104,7 @@ class KegControl extends React.Component {
       <React.Fragment>
         {currentlyVisibleState}
         <div style={buttonContainerStyling}>
-          <button style={buttonStyling} onClick={this.handleClick}>{buttonText}</button>
+          <button className="btn btn-primary" style={buttonStyling} onClick={this.handleClick}>{buttonText}</button>
         </div>
       </React.Fragment>
     );
